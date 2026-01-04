@@ -4,8 +4,9 @@ empleado = input("¿Es empleado? (si / no): ").lower() == "si"
 vetado = input("¿Está vetado? (si / no): ").lower() == "si"
 
 
-if not edad >= 18 and vetado and (permiso or empleado):
+if edad >= 18 and not vetado and (permiso or empleado):
     print("Si tiene permitido el ingreso")
 else:
     print("No tiene permitido el ingreso")
+
 
