@@ -1,0 +1,22 @@
+#def control_acceso():
+# Solicitar datos de entrada
+edad = int(input("Ingrese su edad: "))
+permiso_especial = input("¿Tiene permiso especial? (Sí/No): ").strip().lower()
+es_empleado = input("¿Es empleado? (Sí/No): ").strip().lower()
+esta_vetado = input("¿Está vetado? (Sí/No): ").strip().lower()
+
+# Convertir respuestas a valores booleanos
+permiso_especial = permiso_especial == "sí"
+es_empleado = es_empleado == "sí"
+esta_vetado = esta_vetado == "sí"
+
+# Reglas de acceso
+if not esta_vetado and edad >= 18 and (permiso_especial or es_empleado):
+    print("✅ Acceso concedido: puede ingresar a la zona restringida.")
+else:
+    print("❌ Acceso denegado: no cumple con las condiciones.")
+
+# Ejecutar el programa
+7
+#if __name__ == "__main__":
+#    control_acceso()
