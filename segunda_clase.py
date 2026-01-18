@@ -1,0 +1,18 @@
+edad = int(input("Ingrese su edad: "))
+permiso = input("¿Tiene permiso especial? (si / no): ").lower() == "si"
+empleado = input("¿Es empleado? (si / no): ").lower() == "si"
+vetado = input("¿Está vetado? (si / no): ").lower() == "si"
+
+
+if edad >= 18 and not vetado and (permiso or empleado):
+    print("Si tiene permitido el ingreso")
+else:
+    print("No tiene permitido el ingreso")
+
+
+
+
+
+
+
+

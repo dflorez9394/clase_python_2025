@@ -1,0 +1,18 @@
+#ejercicio
+#a partir de una lista de palabras mostrar nombre completo y mostrar las letras de cada uno y la letra que este en la 3 posición en mayuscula
+nombres = ["stephanny", "casadiego", "hernandez"]
+
+for nombre in nombres:
+    print(nombre)
+    for i in range(len(nombre)): #buscar el tamaño
+        if i !=2:
+            print(nombre[i].lower())
+        else:
+             print(nombre[i].upper())
+
+
+    
+
+
+
+
