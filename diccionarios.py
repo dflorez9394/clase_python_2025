@@ -48,3 +48,10 @@ print("ver completo")
 
 for clave, valor in persona.items():
     print(f"clave: {clave}, valor: {valor}")
+
+#no es obligatorio desde un inicio definir el diccionario con todas las claves
+
+empleado = {}
+print("diccionario vacio")
+print(empleado)
+empleado("nombre") = input("nombre :")
