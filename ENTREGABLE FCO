@@ -1,0 +1,68 @@
+def mostrar_menu():
+    print("\n--- CONTROL DE STOCK ---")
+    print("1. Agregar stock")
+    print("2. Listar stocks")
+    print("3. Ver estadísticas")
+    print("4. Eliminar (limpiar lista)")
+    print("5. Salir")
+
+def agregar_stock(stocks):
+    try:
+        cantidad = int(input("Ingrese la cantidad de producto: "))
+        if cantidad < 0:
+            print("❌ No se permiten valores negativos.")
+        else:
+            stocks.append(cantidad)
+            print("✅ Stock agregado correctamente.")
+    except ValueError:
+        print("❌ Debe ingresar un número válido.")
+
+def listar_stocks(stocks):
+    if not stocks:
+        print("📭 La lista de stocks está vacía.")
+    else:
+        print("\n--- LISTA DE STOCKS ---")
+        for i, cantidad in enumerate(stocks, start=1):
+            print(f"Producto {i}: {cantidad}")
+
+def ver_estadisticas(stocks):
+    if not stocks:
+        print("📭 No hay datos para mostrar estadísticas.")
+    else:
+        total = sum(stocks)
+        bajos = sum(1 for s in stocks if s < 10)
+        cantidad_productos = len(stocks)
+        maximo = max(stocks)
+        
+        print("\n--- ESTADÍSTICAS ---")
+        print(f"Total de productos (suma de stocks): {total}")
+        print(f"Productos con stock bajo (<10): {bajos}")
+        print(f"Cantidad total de productos registrados: {cantidad_productos}")
+        print(f"Stock más alto registrado: {maximo}")
+
+def eliminar_stocks(stocks):
+    stocks.clear()
+    print("🗑️ Lista de stocks eliminada. Ahora está vacía.")
+
+def main():
+    stocks = []
+    while True:
+        mostrar_menu()
+        opcion = input("Seleccione una opción: ")
+        
+        if opcion == "1":
+            agregar_stock(stocks)
+        elif opcion == "2":
+            listar_stocks(stocks)
+        elif opcion == "3":
+            ver_estadisticas(stocks)
+        elif opcion == "4":
+            eliminar_stocks(stocks)
+        elif opcion == "5":
+            print("👋 Saliendo del programa...")
+            break
+        else:
+            print("❌ Opción inválida. Intente nuevamente.")
+
+if __name__ == "__main__":
+    main()
