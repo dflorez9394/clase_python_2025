@@ -20,6 +20,8 @@ def sumar_n_numeros(*precios):
    for precio in precios:
        total+=precio
    return total
+def ejemplo():
+    pass
 
 print(sumar_n_numeros(1,2,3,4,5,123,123,123,123,123,123,123,21,321))
 
