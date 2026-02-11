@@ -1,0 +1,17 @@
+[
+  {
+    "id": 132,
+    "name": "ditto",
+    "types": [
+      "normal"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "rhyhorn",
+    "types": [
+      "ground",
+      "rock"
+    ]
+  }
+]
