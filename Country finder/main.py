@@ -32,17 +32,17 @@ class CountryFinderApp:
         name = input("Ingrese el nombre del país: ")
         country = self.repo.find_by_name(name)
         if country:
-            print("✅ País encontrado en local:")
+            print(" País encontrado en local:")
             print(country)
         else:
-            print("🌐 Consultando API...")
+            print("Consultando API...")
             country = self.api.get_country_by_name(name)
             if country:
-                print("✅ País encontrado en API:")
+                print("País encontrado en API:")
                 print(country)
                 self.repo.add_country(country)
             else:
-                print("❌ País no encontrado.")
+                print("País no encontrado.")
 
     def mostrar_paises(self):
         if not self.repo.countries:
