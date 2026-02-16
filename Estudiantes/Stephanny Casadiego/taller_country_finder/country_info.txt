@@ -1,0 +1,6 @@
+
+País: Colombia
+Capital: Bogotá
+Moneda: COP
+Región: Americas
+Población: 53057212
