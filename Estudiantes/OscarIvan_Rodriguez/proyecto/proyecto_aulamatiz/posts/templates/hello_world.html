@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>Hola Mundo</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        <h1>Hola Mundo</h1>
+        <p>Bienvenidos a mi primer proyecto con Django</p>
+        <p>Nombre: {{name|upper}}</p>
+        <p>Edad: {{age}}</p>
+        <p>Descripción: {{description}}</p>
+        <h2> Temas: {{topics|join:", "}} </h2>
+        
+        <ul> 
+            {% for topic in topics %}
+            <li>{{ topic }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if age >= 18 %}
+            <p>Usted es mayor de edad.</p>
+        {% else %}
+            <p>Usted es menor de edad.</p>
+        {% endif %}
+
+        <p>El total de temas es: {{ topics|length }}</p>
+
+        <ul>
+            {% for teacher in teacher %}
+            <li>{{ teacher }}</li>
+            {% empty %}
+            <li>No hay profesores disponibles.</li>
+            {% endfor %}
+        </ul>
+
+    </body>
+</html>
