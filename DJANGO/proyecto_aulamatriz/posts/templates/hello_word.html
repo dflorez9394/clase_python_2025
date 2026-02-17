@@ -1,0 +1,46 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <!--Formulario para recibir el nombre-->
+    <form method="get">
+        <input type="text" name="name" placeholder="Ingresa tu nombre">
+        <button type="submit">Enviar</button>
+    </form>
+    <h1>Hello World!</h1>
+    <p>{{ name|upper }}</p>
+    <p>edad : {{ age }}</p>
+    <p>{{ description }}</p>
+    <p>{{ topics }} | </p>
+    <h2> Temas: {{topics|join:", "}} </h2>
+    <ul>
+        {% for topic in topics %}
+        <li>{{ topic }}</li>
+        {% endfor %}
+    </ul>
+    {% if age >= 18%}
+        <p> Es mayor de edad</p>
+    {% else %}
+        <p> Es menor de edad</p>
+    {% endif %}
+
+    <p>el total de temas es: {{ topics|length }}</p>
+
+    <p>Los dicentes del curso son:</p>
+
+    <ul>
+        {% for teacher in teachers %}
+        <li>{{ teacher }}</li>
+        {% empty %}
+            <li>Docentes por definir</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
